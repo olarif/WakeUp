@@ -7,6 +7,7 @@ public class Rotate : MonoBehaviour
    
     public Transform target;
     public float speed;
+    public float direction;
 
     //only Z axis needed since 2D game
     private Vector3 zAxis = new Vector3(0, 0, -1);
@@ -14,6 +15,6 @@ public class Rotate : MonoBehaviour
     void Update()
     {
         //spin
-        transform.RotateAround(target.position, zAxis, speed * Time.deltaTime);
+        transform.RotateAround(target.position, zAxis, direction * speed * Time.deltaTime);
     }
 }
