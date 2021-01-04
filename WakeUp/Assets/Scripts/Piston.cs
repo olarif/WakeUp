@@ -9,6 +9,8 @@ public class Piston : MonoBehaviour
     public float delay; //how long the piston pauses befroe firing agian
     public float timeFiring; //How long the piston fires
     public float pistonSpeed; //How fast the piston moves
+    public float horizontalDirection; //Horizontal direction the piston goes. This is realtive to the orientation of the piston!
+
 
     float LocalDelay;
     float LocalFiringTime;
@@ -40,7 +42,7 @@ public class Piston : MonoBehaviour
                 //Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
 
                 //pistonSpeed
-                transform.Translate(new Vector2(-1,0) * (pistonSpeed));
+                transform.Translate(new Vector2(horizontalDirection,0) * (pistonSpeed));
 
             }
             else
