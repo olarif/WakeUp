@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         dust.Play();
     }
 
-    void Jump()
+   public void Jump()
     {
         CreateDust();
         rb.velocity = Vector2.up * jumpForce;
