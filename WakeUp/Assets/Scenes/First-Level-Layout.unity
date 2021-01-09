@@ -599,11 +599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 409765448}
   - component: {fileID: 409765447}
-<<<<<<< Updated upstream
-  m_Layer: 0
-=======
   m_Layer: 11
->>>>>>> Stashed changes
   m_Name: DownFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,11 +665,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409765446}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< Updated upstream
-  m_LocalPosition: {x: 9, y: 0, z: 0}
-=======
   m_LocalPosition: {x: -21.73, y: 2.43, z: 0}
->>>>>>> Stashed changes
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 1373179284}
@@ -1599,19 +1591,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2629445820821345229, guid: dc80ee52a9f9dc6459d04ba22595e5c5, type: 3}
       propertyPath: m_Enabled
-<<<<<<< Updated upstream
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2629445820821345229, guid: dc80ee52a9f9dc6459d04ba22595e5c5, type: 3}
-      propertyPath: m_Distance
-      value: 10.101788
-=======
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2629445820821345229, guid: dc80ee52a9f9dc6459d04ba22595e5c5, type: 3}
       propertyPath: m_Distance
       value: 34.79001
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc80ee52a9f9dc6459d04ba22595e5c5, type: 3}
@@ -2138,13 +2122,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform2
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
-=======
     - target: {fileID: 4088496005586138556, guid: eef457c34f532e243ac0f9cfbc27ef5a, type: 3}
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
->>>>>>> Stashed changes
     - target: {fileID: 4088496005586138557, guid: eef457c34f532e243ac0f9cfbc27ef5a, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3364,11 +3345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< Updated upstream
-  m_IsActive: 1
-=======
   m_IsActive: 0
->>>>>>> Stashed changes
 --- !u!4 &2030849432
 Transform:
   m_ObjectHideFlags: 0
