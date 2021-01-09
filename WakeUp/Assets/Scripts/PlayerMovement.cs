@@ -118,6 +118,11 @@ public class PlayerMovement : MonoBehaviour
             DestroyRope();
         }
 
+        if (!isGrounded && !isGrabbed)
+        {
+            rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
+        }
+
         //movement while hooked
         if (isGrabbed)
         {

@@ -162,7 +162,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  jumpForce: 14
+  jumpForce: 16
   fallMultiplier: 4
   lowJumpMultiplier: 7
   line: {fileID: 1803873043028129396}
