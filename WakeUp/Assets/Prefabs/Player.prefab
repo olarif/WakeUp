@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6308374322663246985}
   speed: 10
-  airSpeed: 4.3
+  airSpeed: 45
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -171,6 +171,8 @@ MonoBehaviour:
     m_Bits: 64
   grapple: {fileID: 3076864897797116774}
   maxDistance: 15
+  minDistance: 0
+  hoistSpeed: 5
   groundCheck: {fileID: 4643344930516534360}
   radius: 0.5
   dust: {fileID: 8685764871167941214}
