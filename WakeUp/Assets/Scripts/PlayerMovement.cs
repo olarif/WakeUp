@@ -101,6 +101,11 @@ public class PlayerMovement : MonoBehaviour
             joint.distance += hoistSpeed * Time.deltaTime;
         }
 
+        if (Input.GetKeyDown("f"))
+        {
+            flying = !flying;
+        }
+
         if (flying) Fly();
     }
 
@@ -223,19 +228,23 @@ public class PlayerMovement : MonoBehaviour
     void Dash(float x, float y)
     {
         //float dashDistance = 100f;
-
         rb.velocity = Vector2.zero;
         rb.velocity += new Vector2(x, y).normalized * 30;
     }
 
     void Fly()
     {
+
         float flyMoveX = Input.GetAxis("Horizontal");
         float flyMoveY = Input.GetAxis("Vertical");
 
         rb.velocity = new Vector2(flyMoveX * speed, flyMoveY * speed);
-    }
 
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            rb.velocity = new Vector2((flyMoveX * speed) * 2, (flyMoveY * speed) * 2);
+        }
+    }
 
     /*
     void Dash()
