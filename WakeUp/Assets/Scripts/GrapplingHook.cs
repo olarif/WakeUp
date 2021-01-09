@@ -6,59 +6,61 @@ public class GrapplingHook : MonoBehaviour
 {
 
     public LineRenderer line;
-    DistanceJoint2D joint;
+    public LayerMask mask;
+    SpringJoint2D joint;
     Vector3 targetPos;
     RaycastHit2D hit;
-    public float distance = 10f;
-    public LayerMask mask;
+    public float maxDistance = 90f;
+    Vector2 lookDirection;
+    bool checker = true;
+    
     public float step = 0.02f;
 
     void Start()
     {
-        joint = GetComponent<DistanceJoint2D>();
+        joint = GetComponent<SpringJoint2D>();
         joint.enabled = false;
         line.enabled = false;
     }
 
 
-    void Update()
+    void LateUpdate()
     {
+        line.SetPosition(0, transform.position);
 
-        if (joint.distance > 1f)    
-            
-            joint.distance -= step;
+        lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && checker == true)    
         {
-            targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            targetPos.z = 0;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, lookDirection, maxDistance, mask);
 
-            hit = Physics2D.Raycast(transform.position, targetPos - transform.position, distance, mask);
-
-            if (hit.collider != null && hit.collider.gameObject.GetComponent<Rigidbody2D>() != null)
+            if (hit.collider != null)
             {
-                joint.enabled = true;
-                joint.connectedBody = hit.collider.gameObject.GetComponent<Rigidbody2D>();
-                joint.connectedAnchor = hit.point - new Vector2(hit.collider.transform.position.x, hit.collider.transform.position.y);
-                joint.distance = Vector2.Distance(transform.position, hit.point);
-
-                line.enabled = true;
-                line.SetPosition(0, transform.position);
-                line.SetPosition(1, hit.point);
+                checker = false;
+                SetRope(hit);
             }
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonUp(0))
         {
-            line.SetPosition(0, transform.position);
+            checker = true;
+            DestroyRope();
         }
+    }
 
-            if (Input.GetMouseButtonUp(0))
-        {
-            joint.enabled = false;
-            line.enabled = false;
-        }
+    void SetRope(RaycastHit2D hit)
+    {
+        joint.enabled = true;
+        joint.connectedAnchor = hit.point;
 
+        line.enabled = true;
+        line.SetPosition(1, hit.point);
+    }
+
+    void DestroyRope()
+    {
+        joint.enabled = false;
+        line.enabled = false;
     }
 }

@@ -8,19 +8,33 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     //movement
-    public float speed = 10;
+    public float speed = 10f;
     private float moveX;
+    public float airSpeed = 20f;
     private bool faceRight;
 
     //jumping
-    public float jumpForce = 15f;
     public LayerMask groundLayer;
+    public float jumpForce = 15f;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
+    //grappling hook
+    public LineRenderer line;
+    public LayerMask mask;
+    public Transform grapple;
+    DistanceJoint2D joint;
+    RaycastHit2D hit;
+    Vector3 targetPos;
+    Vector2 lookDirection;
+    public float maxDistance;
+    public float minDistance;
+    public float hoistSpeed;
+    bool isGrabbed = false;
+
     //ground check
-    private bool isGrounded;
     public Transform groundCheck;
+    private bool isGrounded;
     public float radius;
 
     //particle system
@@ -33,21 +47,82 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed = 5f;
     bool isDashing;
 
-    
-
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();  
+        rb = GetComponent<Rigidbody2D>();
+        joint = GetComponent<DistanceJoint2D>();
+        joint.enabled = false;
+        line.enabled = false;
+    }
+
+    private void Update()
+    {
+        //save horizontal and vertical axis in variabled
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+
+        //set direction
+        Vector2 dir = new Vector2(x, y);
+
+        //call jump function
+        if (Input.GetButtonDown("Jump") && isGrounded) Jump();
+
+        //animator
+        animator.SetFloat("Speed", Mathf.Abs(moveX));
+        if (!isGrounded)     animator.SetBool("IsJumping", true);
+        else if (isGrounded) animator.SetBool("IsJumping", false);
+
+        //dash
+        if (Input.GetKeyDown(KeyCode.E)) Dash(x, y);
+
+        //grapple script
+        if (Input.GetMouseButtonDown(0))
+        {
+            SetRope();
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            DestroyRope();
+        }
+
+        //move up and down the rope
+        if (isGrabbed && Input.GetKey("w") && joint.distance < maxDistance)
+        {
+            joint.distance -= hoistSpeed * Time.deltaTime;
+        }
+
+        if (isGrabbed && Input.GetKey("s"))
+        {
+            if (joint.distance > maxDistance-1) return;
+            joint.distance += hoistSpeed * Time.deltaTime;
+        }
     }
 
     private void FixedUpdate()
     {
-        //move player
-        moveX = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
+        //render line
+        line.SetPosition(0, grapple.position);
+        lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - grapple.position;
 
         //check if grounded
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, radius, groundLayer);
+
+        //move player
+        moveX = Input.GetAxis("Horizontal");
+
+        //movement on ground
+        if (isGrounded)
+        {
+            MoveOnGround();
+            DestroyRope();
+        }
+
+        //movement while hooked
+        if (isGrabbed)
+        {
+            MoveInAir();
+        }
 
         //Jump multipliers
         if (rb.velocity.y < 0)
@@ -60,71 +135,58 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //flip character
-        if (!faceRight && moveX < 0)
-        {
-            Flip();
-        }
-        else if (faceRight && moveX > 0)
-        {
-            Flip();
-        }
-
+        if      (!faceRight && moveX < 0) Flip();
+        else if  (faceRight && moveX > 0) Flip();
     }
 
-    private void Update()
+    void MoveOnGround() 
     {
-
-        animator.SetFloat("Speed", Mathf.Abs(moveX));
-
-
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-
-        Vector2 dir = new Vector2(x, y);
-
-        //call jump function
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            Jump(); 
-        }
-
-        if (!isGrounded)
-        {
-            animator.SetBool("IsJumping", true);
-        }
-        else if (isGrounded)
-        {
-            animator.SetBool("IsJumping", false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Dash(x, y);
-        }
+        rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
     }
 
-    void Dash(float x, float y)
+    void MoveInAir()
     {
-        rb.velocity = Vector2.zero;
-        rb.velocity += new Vector2(x, y).normalized * 30;
+        if (moveX > 0)
+        {
+            Vector2 force = new Vector2(airSpeed, 0);
+
+            rb.AddForce(force, ForceMode2D.Force);
+            //rb.velocity = new Vector2(moveX * airSpeed, 10);
+        }
+
+        else if (moveX < 0)
+        {
+            Vector2 force = new Vector2(-airSpeed, 0);
+
+            rb.AddForce(force, ForceMode2D.Force);
+            //rb.velocity = new Vector2(moveX * airSpeed, 100);
+        }
     }
 
-
-    /*
-
-    void Dash()
+    //draw rope
+    void SetRope()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        line.useWorldSpace = true;
+        RaycastHit2D hit = Physics2D.Raycast(grapple.position, lookDirection, maxDistance, mask);
+        if (hit) isGrabbed = true;
 
-        mousePos.z = 0;
-        var direction = (mousePos - this.transform.position);
-
-        rb.velocity = Vector3.zero;
-
-        transform.position += direction * dashSpeed;
+        if (hit.collider != null)
+        {
+            joint.enabled = true;
+            joint.connectedAnchor = hit.point;
+            line.enabled = true;
+            line.SetPosition(1, hit.point);
+        }
     }
 
-    */
+    //delete rope
+    void DestroyRope()
+    {
+        isGrabbed = false;
+        joint.enabled = false;
+        line.enabled = false;
+        line.useWorldSpace = false;
+    }
     
     void CreateDust()
     {
@@ -148,5 +210,27 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = Scaler;
     }
 
+    void Dash(float x, float y)
+    {
+        float dashDistance = 100f;
+        
 
+        rb.velocity = Vector2.zero;
+        rb.velocity += new Vector2(x, y).normalized * 30;
+    }
+
+
+    /*
+    void Dash()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        mousePos.z = 0;
+        var direction = (mousePos - this.transform.position);
+
+        rb.velocity = Vector3.zero;
+
+        transform.position += direction * dashSpeed;
+    }
+    */
 }

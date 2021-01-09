@@ -17,8 +17,13 @@ TagManager:
   - Player
   - Rope
   - Gears
+<<<<<<< Updated upstream
   - Edges
   - Handle
+=======
+  - GrabLayer
+  - Background
+>>>>>>> Stashed changes
   - 
   - 
   - 
