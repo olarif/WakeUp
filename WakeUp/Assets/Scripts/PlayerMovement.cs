@@ -47,6 +47,9 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed = 5f;
     bool isDashing;
 
+    //flying for test purposes
+    public bool flying = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -76,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)) Dash(x, y);
 
         //grapple script
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isGrounded)
         {
             SetRope();
         }
@@ -97,6 +100,8 @@ public class PlayerMovement : MonoBehaviour
             if (joint.distance > maxDistance-1) return;
             joint.distance += hoistSpeed * Time.deltaTime;
         }
+
+        if (flying) Fly();
     }
 
     private void FixedUpdate()
@@ -118,13 +123,13 @@ public class PlayerMovement : MonoBehaviour
             DestroyRope();
         }
 
-        if (!isGrounded && !isGrabbed)
+        if (!isGrounded && !isGrabbed && !flying)
         {
             rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
         }
 
         //movement while hooked
-        if (isGrabbed)
+        if (isGrabbed && !flying)
         {
             MoveInAir();
         }
@@ -217,11 +222,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Dash(float x, float y)
     {
-        float dashDistance = 100f;
-        
+        //float dashDistance = 100f;
 
         rb.velocity = Vector2.zero;
         rb.velocity += new Vector2(x, y).normalized * 30;
+    }
+
+    void Fly()
+    {
+        float flyMoveX = Input.GetAxis("Horizontal");
+        float flyMoveY = Input.GetAxis("Vertical");
+
+        rb.velocity = new Vector2(flyMoveX * speed, flyMoveY * speed);
     }
 
 
