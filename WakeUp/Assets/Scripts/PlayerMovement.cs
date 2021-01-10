@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveX;
     public float airSpeed = 20f;
     private bool faceRight;
+    public Transform spawnPoint;
 
     //jumping
     public LayerMask groundLayer;
@@ -28,24 +29,16 @@ public class PlayerMovement : MonoBehaviour
     Vector3 targetPos;
     Vector2 lookDirection;
     public float maxDistance;
-    public float minDistance;
     public float hoistSpeed;
     bool isGrabbed = false;
 
     //ground check
     public Transform groundCheck;
     private bool isGrounded;
-    public float radius;
+    private float radius = 0.5f;
 
     //particle system
     public ParticleSystem dust;
-
-    //dashing
-    public float StartDashTimer;
-    private float CurrentDashTimer;
-    private float DashDirection;
-    public float dashSpeed = 5f;
-    bool isDashing;
 
     //flying for test purposes
     public bool flying = false;
@@ -74,9 +67,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(moveX));
         if (!isGrounded)     animator.SetBool("IsJumping", true);
         else if (isGrounded) animator.SetBool("IsJumping", false);
-
-        //dash
-        if (Input.GetKeyDown(KeyCode.E)) Dash(x, y);
 
         //grapple script
         if (Input.GetMouseButtonDown(0) && !isGrounded)
@@ -154,6 +144,14 @@ public class PlayerMovement : MonoBehaviour
         else if  (faceRight && moveX > 0) Flip();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bell"))
+        {
+            transform.position = spawnPoint.transform.position;
+        }
+    }
+
     void MoveOnGround() 
     {
         rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
@@ -225,16 +223,8 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = Scaler;
     }
 
-    void Dash(float x, float y)
-    {
-        //float dashDistance = 100f;
-        rb.velocity = Vector2.zero;
-        rb.velocity += new Vector2(x, y).normalized * 30;
-    }
-
     void Fly()
     {
-
         float flyMoveX = Input.GetAxis("Horizontal");
         float flyMoveY = Input.GetAxis("Vertical");
 
@@ -245,18 +235,4 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2((flyMoveX * speed) * 2, (flyMoveY * speed) * 2);
         }
     }
-
-    /*
-    void Dash()
-    {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        mousePos.z = 0;
-        var direction = (mousePos - this.transform.position);
-
-        rb.velocity = Vector3.zero;
-
-        transform.position += direction * dashSpeed;
-    }
-    */
 }
