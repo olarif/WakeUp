@@ -453,7 +453,7 @@ namespace DigitalRuby.AdvancedPolygonCollider
                     p.Texture.format != TextureFormat.RGB24 && p.Texture.format != TextureFormat.Alpha8 && p.Texture.format != TextureFormat.RGBAFloat &&
                     p.Texture.format != TextureFormat.RGBAHalf && p.Texture.format != TextureFormat.RGB565)
                 {
-                    Debug.LogWarning("Advanced Polygon Collider works best with a non-compressed texture in ARGB32, BGRA32, RGB24, RGBA4444, RGB565, RGBAFloat or RGBAHalf format");
+                    //Debug.LogWarning("Advanced Polygon Collider works best with a non-compressed texture in ARGB32, BGRA32, RGB24, RGBA4444, RGB565, RGBAFloat or RGBAHalf format");
                 }
                 int width = (int)p.Rect.width;
                 int height = (int)p.Rect.height;
@@ -498,7 +498,7 @@ namespace DigitalRuby.AdvancedPolygonCollider
             }
             catch (Exception ex)
             {
-                Debug.LogError("Error creating collider: " + ex);
+                Debug.Log("Error creating collider: " + ex);
             }
         }
 

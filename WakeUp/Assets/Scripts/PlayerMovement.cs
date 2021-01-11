@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -53,13 +54,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        //save horizontal and vertical axis in variabled
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-
-        //set direction
-        Vector2 dir = new Vector2(x, y);
-
         //call jump function
         if (Input.GetButtonDown("Jump") && isGrounded) Jump();
 
@@ -94,6 +88,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown("f"))
         {
             flying = !flying;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
 
         if (flying) Fly();
@@ -144,12 +143,25 @@ public class PlayerMovement : MonoBehaviour
         else if  (faceRight && moveX > 0) Flip();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Bell"))
+        if (collision.tag == "Bell")
         {
+            flying = false;
             transform.position = spawnPoint.transform.position;
         }
+
+        if (collision.tag == "dead")
+        {
+            PlayerDead();
+        }
+    }
+
+    void PlayerDead()
+    {
+        Scene scene;
+        scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 
     void MoveOnGround() 
@@ -164,7 +176,6 @@ public class PlayerMovement : MonoBehaviour
             Vector2 force = new Vector2(airSpeed, 0);
 
             rb.AddForce(force, ForceMode2D.Force);
-            //rb.velocity = new Vector2(moveX * airSpeed, 10);
         }
 
         else if (moveX < 0)
@@ -172,7 +183,6 @@ public class PlayerMovement : MonoBehaviour
             Vector2 force = new Vector2(-airSpeed, 0);
 
             rb.AddForce(force, ForceMode2D.Force);
-            //rb.velocity = new Vector2(moveX * airSpeed, 100);
         }
     }
 
