@@ -138,7 +138,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 1
-  m_GravityScale: 3
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -158,7 +158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6308374322663246985}
   speed: 10
-  airSpeed: 45
+  airSpeed: 70
+  spawnPoint: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -170,14 +171,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   grapple: {fileID: 3076864897797116774}
+  grappleSpeed: 45
   maxDistance: 15
-  minDistance: 0
   hoistSpeed: 5
   groundCheck: {fileID: 4643344930516534360}
-  radius: 0.5
   dust: {fileID: 8685764871167941214}
-  StartDashTimer: 0.25
-  dashSpeed: 0.5
+  flying: 0
 --- !u!95 &6308374322663246985
 Animator:
   serializedVersion: 3

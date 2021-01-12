@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     //movement
     public float speed = 10f;
     private float moveX;
-    public float airSpeed = 20f;
+    public float airSpeed = 70f;
     private bool faceRight;
     public Transform spawnPoint;
 
@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask mask;
     public Transform grapple;
     DistanceJoint2D joint;
+    public float grappleSpeed = 45f;
     RaycastHit2D hit;
     Vector3 targetPos;
     Vector2 lookDirection;
@@ -85,17 +86,18 @@ public class PlayerMovement : MonoBehaviour
             joint.distance += hoistSpeed * Time.deltaTime;
         }
 
+        //toggle flying
         if (Input.GetKeyDown("f"))
         {
             flying = !flying;
         }
 
+        if (flying) Fly();
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
-
-        if (flying) Fly();
     }
 
     private void FixedUpdate()
@@ -124,6 +126,11 @@ public class PlayerMovement : MonoBehaviour
 
         //movement while hooked
         if (isGrabbed && !flying)
+        {
+            GrappleInAir();
+        }
+
+        if (!isGrabbed && !isGrounded)
         {
             MoveInAir();
         }
@@ -169,19 +176,32 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
     }
 
+    void GrappleInAir()
+    {
+        if (moveX > 0)
+        {
+            Vector2 force = new Vector2(grappleSpeed, 0);
+            rb.AddForce(force, ForceMode2D.Force);
+        }
+
+        else if (moveX < 0)
+        {
+            Vector2 force = new Vector2(-grappleSpeed, 0);
+            rb.AddForce(force, ForceMode2D.Force);
+        }
+    }
+
     void MoveInAir()
     {
         if (moveX > 0)
         {
             Vector2 force = new Vector2(airSpeed, 0);
-
             rb.AddForce(force, ForceMode2D.Force);
         }
 
         else if (moveX < 0)
         {
             Vector2 force = new Vector2(-airSpeed, 0);
-
             rb.AddForce(force, ForceMode2D.Force);
         }
     }
