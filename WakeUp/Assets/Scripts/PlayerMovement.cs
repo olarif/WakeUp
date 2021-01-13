@@ -58,6 +58,11 @@ public class PlayerMovement : MonoBehaviour
         //call jump function
         if (Input.GetButtonDown("Jump") && isGrounded) Jump();
 
+        if (isGrabbed && Input.GetMouseButtonUp(0))
+        {
+            RopeLaunch();
+        }
+
         //animator
         animator.SetFloat("Speed", Mathf.Abs(moveX));
         if (!isGrounded)     animator.SetBool("IsJumping", true);
@@ -121,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (!isGrounded && !isGrabbed && !flying)
         {
-            rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
+            //rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
         }
 
         //movement while hooked
@@ -182,12 +187,16 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector2 force = new Vector2(grappleSpeed, 0);
             rb.AddForce(force, ForceMode2D.Force);
+
+            //rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
         }
 
         else if (moveX < 0)
         {
             Vector2 force = new Vector2(-grappleSpeed, 0);
             rb.AddForce(force, ForceMode2D.Force);
+
+            //rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
         }
     }
 
@@ -195,13 +204,34 @@ public class PlayerMovement : MonoBehaviour
     {
         if (moveX > 0)
         {
-            Vector2 force = new Vector2(airSpeed, 0);
+            //Vector2 force = new Vector2(airSpeed, 0);
+            //rb.AddForce(force, ForceMode2D.Force);
+
+            rb.velocity = new Vector2(moveX * airSpeed, rb.velocity.y);
+        }
+
+        else if (moveX < 0)
+        {
+            //Vector2 force = new Vector2(-airSpeed, 0);
+            //rb.AddForce(force, ForceMode2D.Force);
+
+            rb.velocity = new Vector2(moveX * airSpeed, rb.velocity.y);
+        }
+    }
+
+    void RopeLaunch()
+    {
+        if (moveX > 0)
+        {
+            Debug.Log("right");
+            Vector2 force = new Vector2(airSpeed*2, 5);
             rb.AddForce(force, ForceMode2D.Force);
         }
 
         else if (moveX < 0)
         {
-            Vector2 force = new Vector2(-airSpeed, 0);
+            Debug.Log("left");
+            Vector2 force = new Vector2(-airSpeed*2, 5);
             rb.AddForce(force, ForceMode2D.Force);
         }
     }
