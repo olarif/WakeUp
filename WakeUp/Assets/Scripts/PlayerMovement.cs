@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxDistance;
     public float hoistSpeed;
     bool isGrabbed = false;
+    bool setRope;
 
     //ground check
     public Transform groundCheck;
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
         joint = GetComponent<DistanceJoint2D>();
         joint.enabled = false;
         line.enabled = false;
+        setRope = false;
     }
 
     private void Update()
@@ -71,11 +73,12 @@ public class PlayerMovement : MonoBehaviour
         //grapple script
         if (Input.GetMouseButtonDown(0) && !isGrounded)
         {
-            SetRope();
+            setRope = true;
         }
 
         if (Input.GetMouseButtonUp(0))
         {
+            setRope = false;
             DestroyRope();
         }
 
@@ -107,6 +110,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (setRope)
+        {
+            SetRope();
+        }
+
         //render line
         line.SetPosition(0, grapple.position);
         lookDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - grapple.position;
@@ -122,11 +130,6 @@ public class PlayerMovement : MonoBehaviour
         {
             MoveOnGround();
             DestroyRope();
-        }
-
-        if (!isGrounded && !isGrabbed && !flying)
-        {
-            //rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
         }
 
         //movement while hooked
@@ -187,16 +190,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector2 force = new Vector2(grappleSpeed, 0);
             rb.AddForce(force, ForceMode2D.Force);
-
-            //rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
         }
 
         else if (moveX < 0)
         {
             Vector2 force = new Vector2(-grappleSpeed, 0);
             rb.AddForce(force, ForceMode2D.Force);
-
-            //rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
         }
     }
 
@@ -204,17 +203,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (moveX > 0)
         {
-            //Vector2 force = new Vector2(airSpeed, 0);
-            //rb.AddForce(force, ForceMode2D.Force);
-
             rb.velocity = new Vector2(moveX * airSpeed, rb.velocity.y);
         }
 
         else if (moveX < 0)
         {
-            //Vector2 force = new Vector2(-airSpeed, 0);
-            //rb.AddForce(force, ForceMode2D.Force);
-
             rb.velocity = new Vector2(moveX * airSpeed, rb.velocity.y);
         }
     }
@@ -223,14 +216,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (moveX > 0)
         {
-            Debug.Log("right");
             Vector2 force = new Vector2(airSpeed*2, 5);
             rb.AddForce(force, ForceMode2D.Force);
         }
 
         else if (moveX < 0)
         {
-            Debug.Log("left");
             Vector2 force = new Vector2(-airSpeed*2, 5);
             rb.AddForce(force, ForceMode2D.Force);
         }
@@ -250,6 +241,8 @@ public class PlayerMovement : MonoBehaviour
             line.enabled = true;
             line.SetPosition(1, hit.point);
         }
+
+        setRope = false;
     }
 
     //delete rope
