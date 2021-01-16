@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2115885047690174349}
   - component: {fileID: 6032942444031804399}
   - component: {fileID: 115333153}
-  m_Layer: 12
+  m_Layer: 6
   m_Name: PistonLaunch
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5370286578593476204}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4584598550522257990
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   pistonLaunchSpeed: 50
   speed: 100
   delay: 1.5
+  multiplier: 5
   yMin: -1
   yMax: 1
 --- !u!61 &690436534469974721

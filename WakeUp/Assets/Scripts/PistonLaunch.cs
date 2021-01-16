@@ -8,10 +8,12 @@ public class PistonLaunch : MonoBehaviour
     public float pistonSpeed; //How fast the piston moves
 
     private GameObject playerGameObject;
+    Rigidbody2D rb;
     public float pistonLaunchSpeed;
 
     public float speed = 5f;
     public float delay = 5;
+    public float multiplier = 5;
 
     public float yMin = -2;
     public float yMax = 2;
@@ -23,6 +25,7 @@ public class PistonLaunch : MonoBehaviour
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         playerGameObject = GameObject.FindGameObjectWithTag("Player");
         defTimer = delay;
         toggle = false;
@@ -86,7 +89,7 @@ public class PistonLaunch : MonoBehaviour
                 //Vector3 rotation = new Vector3(this.pistonLaunchSpeed * Time.deltaTime, 0, this.transform.rotation.z); ;
 
                 Rigidbody2D rb = playerGameObject.GetComponent<Rigidbody2D>();
-                playerGameObject.transform.Translate(0, speed / 2 * Time.deltaTime, 0);
+                playerGameObject.transform.Translate(0, 1, 0);
                 playerGameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * pistonLaunchSpeed, ForceMode2D.Impulse);
             }   
         }    

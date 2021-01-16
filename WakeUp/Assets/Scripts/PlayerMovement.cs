@@ -216,14 +216,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (moveX > 0)
         {
-            Vector2 force = new Vector2(airSpeed*2, 5);
-            rb.AddForce(force, ForceMode2D.Force);
+            Vector2 force = new Vector2(airSpeed*3, 10);
+            rb.AddForce(force, ForceMode2D.Impulse);
         }
 
         else if (moveX < 0)
         {
-            Vector2 force = new Vector2(-airSpeed*2, 5);
-            rb.AddForce(force, ForceMode2D.Force);
+            Vector2 force = new Vector2(-airSpeed*3, 10);
+            rb.AddForce(force, ForceMode2D.Impulse);
         }
     }
 
