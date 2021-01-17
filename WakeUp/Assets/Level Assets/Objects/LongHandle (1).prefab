@@ -91,6 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4907865447665943320}
+  - component: {fileID: 1100890823580335865}
   m_Layer: 0
   m_Name: LongHandle (1)
   m_TagString: Untagged
@@ -120,6 +121,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1100890823580335865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4907865447665943321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb8f9353ad37554c9da4bc15489e4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ofsetX: 0
+  ofsetY: 0
+  rangeX: 0
+  rangeY: 0
+  speedX: 0
+  speedY: 0
+  Func1: 0
+  Func2: 0
+  Func3: 0
+  Func4: 0
+  Func5: 0
+  Func6: 0
 --- !u!1 &4907865447975798774
 GameObject:
   m_ObjectHideFlags: 0

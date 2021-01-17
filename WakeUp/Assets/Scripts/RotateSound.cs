@@ -4,43 +4,41 @@ using UnityEngine;
 
 public class RotateSound : MonoBehaviour
 {
-    private float defaultZ;
-    private float defaultY;
-    private float defaultX;
-    private Vector3 currentEulerAngles;
-    private Vector3 defaultEulerAngles;
-    private Vector3 checkAngle;
+    private float tempZ;
 
 
-    // Start is called before the first frame update
     void Start()
     {
-        Vector3 defaultEulerAngles = transform.localEulerAngles;
+        tempZ = transform.eulerAngles.z;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector3 currentEulerAngles = transform.localEulerAngles;
-
-        if (currentEulerAngles.z > defaultEulerAngles.z)
+        if (transform.eulerAngles.z > tempZ)
         {
-            Rotate();
-            defaultEulerAngles.z = currentEulerAngles.z;
+            IsRotating();
+            RotateLeft();
         }
-        else if (currentEulerAngles.z == defaultEulerAngles.z)
+        else if (transform.eulerAngles.z < tempZ)
         {
-            NotRotating();
+            IsRotating();
+            RotateRight();
         }
+        tempZ = transform.eulerAngles.z;
     }
 
-    void Rotate()
+    void RotateRight()
+    {
+        Debug.Log("right");
+    }
+
+    void RotateLeft()
+    {
+        Debug.Log("left");
+    }
+
+    void IsRotating()
     {
         Debug.Log("rotating");
-    }
-
-    void NotRotating()
-    {
-        Debug.Log("not rotating");
     }
 }

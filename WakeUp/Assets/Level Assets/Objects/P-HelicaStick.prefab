@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 461939504}
-  - component: {fileID: 5683923410545680622}
   m_Layer: 0
   m_Name: LongHandle (1)
   m_TagString: Untagged
@@ -35,30 +34,6 @@ Transform:
   m_Father: {fileID: 5248468695404924876}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
---- !u!114 &5683923410545680622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461939503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bb8f9353ad37554c9da4bc15489e4c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ofsetX: 0
-  ofsetY: 0
-  rangeX: 0
-  rangeY: 0
-  speedX: 0
-  speedY: 0
-  Func1: 0
-  Func2: 0
-  Func3: 0
-  Func4: 0
-  Func5: 0
-  Func6: 0
 --- !u!1 &1408686113
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,30 +280,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3167926815221961400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5248468695404924877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bb8f9353ad37554c9da4bc15489e4c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ofsetX: 0
-  ofsetY: 0
-  rangeX: 0
-  rangeY: 0
-  speedX: 0
-  speedY: 0
-  Func1: 0
-  Func2: 0
-  Func3: 0
-  Func4: 0
-  Func5: 0
-  Func6: 0
 --- !u!254 &745589610
 RelativeJoint2D:
   m_ObjectHideFlags: 0
@@ -437,6 +388,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1129273686113789863, guid: d3f0919239004054e9cd8d62314159c3, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1129273686113789863, guid: d3f0919239004054e9cd8d62314159c3, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7819372569105343618, guid: d3f0919239004054e9cd8d62314159c3, type: 3}
       propertyPath: m_SortingOrder
       value: -4
@@ -455,7 +414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7819372569105343623, guid: d3f0919239004054e9cd8d62314159c3, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -5.938
+      value: -5.9170003
       objectReference: {fileID: 0}
     - target: {fileID: 7819372569105343623, guid: d3f0919239004054e9cd8d62314159c3, type: 3}
       propertyPath: m_ConnectedAnchor.y
@@ -479,7 +438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7819372569634387340, guid: d3f0919239004054e9cd8d62314159c3, type: 3}
       propertyPath: m_Distance
-      value: 4.1217656
+      value: 4.1426635
       objectReference: {fileID: 0}
     - target: {fileID: 7819372569634387340, guid: d3f0919239004054e9cd8d62314159c3, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -559,11 +518,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3f0919239004054e9cd8d62314159c3, type: 3}
---- !u!1 &5248468695404924877 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7819372569792536496, guid: d3f0919239004054e9cd8d62314159c3, type: 3}
-  m_PrefabInstance: {fileID: 2618196210526490749}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5248468695404924876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7819372569792536497, guid: d3f0919239004054e9cd8d62314159c3, type: 3}
