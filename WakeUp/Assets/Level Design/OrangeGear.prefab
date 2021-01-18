@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 3364067915232741577}
   - component: {fileID: 6185297042537900644}
   - component: {fileID: 3651599901238572856}
-  - component: {fileID: 6455483520334385967}
   - component: {fileID: -1346149307014122250}
   - component: {fileID: 9119297682567236025}
   - component: {fileID: 8570988653137307429}
   m_Layer: 6
-  m_Name: Gear
+  m_Name: OrangeGear
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,22 +106,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
---- !u!114 &6455483520334385967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5714119719320854908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2249d259b180c284294da725edbdabea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 3364067915232741577}
-  speed: 30
-  direction: -1
+  m_Constraints: 3
 --- !u!251 &-1346149307014122250
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -139,9 +123,9 @@ PlatformEffector2D:
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 0
-  m_UseSideFriction: 1
+  m_UseSideFriction: 0
   m_UseSideBounce: 0
-  m_SideArc: 0
+  m_SideArc: 180
 --- !u!58 &9119297682567236025
 CircleCollider2D:
   m_ObjectHideFlags: 0
