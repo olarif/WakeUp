@@ -67,7 +67,9 @@ public class PlayerMovement : MonoBehaviour
 
         //animator
         animator.SetFloat("Speed", Mathf.Abs(moveX));
-        if (!isGrounded)     animator.SetBool("IsJumping", true);
+        if (!isGrounded) animator.SetBool("IsJumping", true);
+        else if (!isGrounded && rb.velocity.y < 0) animator.SetBool("IsFalling", true);
+        else if (!isGrounded && rb.velocity.y > 0) animator.SetBool("IsFalling", false);
         else if (isGrounded) animator.SetBool("IsJumping", false);
 
         //grapple script
@@ -160,6 +162,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "coin")
+        {
+            Destroy(collision.gameObject);
+        }
+
         if (collision.tag == "Bell")
         {
             flying = false;
@@ -174,9 +181,9 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerDead()
     {
-        Scene scene;
-        scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        var gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager1>();
+        transform.position = gm.lastCheckPointPos;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void MoveOnGround() 

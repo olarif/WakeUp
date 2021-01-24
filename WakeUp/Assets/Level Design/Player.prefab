@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3656276654238603069}
   - component: {fileID: 6356333115616633904}
   - component: {fileID: 116130779556556345}
+  - component: {fileID: 2847331016692851990}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -87,7 +88,7 @@ MonoBehaviour:
   line: {fileID: 1137365397467247236}
   mask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
   grapple: {fileID: 4355868586679719830}
   grappleSpeed: 30
   maxDistance: 15
@@ -220,6 +221,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.005229315, y: -0.13367932}
   m_Size: {x: 1.6964278, y: 6.4447775}
   m_Direction: 0
+--- !u!114 &2847331016692851990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561459415258809941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: babae4e35cfc4584a9cd2c7597ce156f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1706122745182738188
 GameObject:
   m_ObjectHideFlags: 0
