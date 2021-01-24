@@ -8,6 +8,8 @@ TagManager:
   - Gear
   - Bell
   - dead
+  - coin
+  - GM
   layers:
   - Default
   - TransparentFX
