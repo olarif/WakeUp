@@ -11,7 +11,7 @@ public class PistonAudio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pistonLoop = FMODUnity.RuntimeManager.CreateInstance("");
+        pistonLoop = FMODUnity.RuntimeManager.CreateInstance("event:/LaunchingPiston");
         
         oldpos = transform.position;
         

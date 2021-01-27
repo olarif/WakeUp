@@ -22,13 +22,13 @@ public class FmodPlayer : MonoBehaviour
          {
             if (hit.collider.tag == "Floor")
             {
-                Material = 1f;
+                Material = 0f;
             }
             else if (hit.collider.tag == "Gear")
             {
-                Material = 2f;
+                Material = 1f;
             }
-            else Material = 1f;
+            else Material = 0f;
          }
     }
 
