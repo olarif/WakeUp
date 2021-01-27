@@ -59,7 +59,10 @@ MonoBehaviour:
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
+    ModeOverride: 0
     LensShift: {x: 0, y: 0}
+    GateFit: 0
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -96,8 +99,8 @@ GameObject:
   - component: {fileID: 1622533878993083571}
   - component: {fileID: 1622533878993083468}
   - component: {fileID: 1622533878993083470}
-  - component: {fileID: 1622533878993083469}
   - component: {fileID: 1622533878993083570}
+  - component: {fileID: 132792504570574322}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -170,21 +173,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622533878993083471}
   m_Enabled: 1
---- !u!114 &1622533878993083469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1622533878993083471}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb7525b8ba2582241bebe87af51406e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  offset: {x: 0, y: 3.7, z: -25}
-  smoothSpeed: 10
 --- !u!114 &1622533878993083570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +207,20 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &132792504570574322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622533878993083471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &1622533879107364904
 GameObject:
   m_ObjectHideFlags: 0
