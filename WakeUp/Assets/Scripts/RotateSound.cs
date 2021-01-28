@@ -30,21 +30,22 @@ public class RotateSound : MonoBehaviour
 
     void RotateRight()
     {
-        Debug.Log("right");
+     //   Debug.Log("right");
         
     }
 
     void RotateLeft()
     {
-        Debug.Log("left");
+       // Debug.Log("left");
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.tag=="Gear")
         DoubleGearSound();
     }
     void IsRotating()
     {
-        Debug.Log("rotating");
+      //  Debug.Log("rotating");
         
     }
     void DoubleGearSound()

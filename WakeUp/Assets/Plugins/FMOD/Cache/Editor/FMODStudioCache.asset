@@ -40,7 +40,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -9018552979181434171}
+  - {fileID: -4111034128016078534}
   MinDistance: 0
   MaxDistance: 0
   Length: 2000
@@ -107,6 +107,46 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &-6239421027812491163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-4111034128016078534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-2884548304490536770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +182,7 @@ MonoBehaviour:
   Path: ../../../../../../../Projects/A_WakeUpFMOD/WakeUp/Build/Desktop/Gears.bank
   Name: Gears
   StudioPath: bank:/Gears
-  lastModified: 637474442674297320
+  lastModified: 637474482547204083
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -218,7 +258,7 @@ MonoBehaviour:
   - {fileID: 2509230515476796744}
   StringsBanks:
   - {fileID: 8183778711074489053}
-  stringsBankWriteTime: 637474442674593827
+  stringsBankWriteTime: 637474482547523211
   cacheVersion: 6
 --- !u!114 &773982699495300641
 MonoBehaviour:
@@ -240,8 +280,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 9.400001
-  MaxDistance: 20
+  MinDistance: 29.5
+  MaxDistance: 50
   Length: 6058
 --- !u!114 &1066805042659423175
 MonoBehaviour:
@@ -278,7 +318,7 @@ MonoBehaviour:
   Path: ../../../../../../../Projects/A_WakeUpFMOD/WakeUp/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637474442674524018
+  lastModified: 637474482547463373
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -324,10 +364,50 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 6
-  MaxDistance: 450
+  MinDistance: 9.400001
+  MaxDistance: 10000
   Length: 64910
+--- !u!114 &2995337977397176428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &3220860335513562743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &4878389284477163978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -362,7 +442,7 @@ MonoBehaviour:
   Path: ../../../../../../../Projects/A_WakeUpFMOD/WakeUp/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637474442674593827
+  lastModified: 637474482547523211
   LoadResult: 0
   FileSizes:
   - Name: Desktop
