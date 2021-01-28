@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-   
     public Transform target;
     public float speed;
     public float direction;
@@ -28,6 +27,12 @@ public class Rotate : MonoBehaviour
         }
         
     }
+
+
+    // StartCoroutine(CountDownrotate());
+    //spin
+    //transform.RotateAround(target.position, zAxis, direction * speed * Time.deltaTime);
+
     private IEnumerator CountDownrotate()
     {
         transform.RotateAround(target.position, zAxis, direction * speed * Time.deltaTime);

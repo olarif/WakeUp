@@ -10,6 +10,7 @@ TagManager:
   - dead
   - coin
   - GM
+  - Floor
   layers:
   - Default
   - TransparentFX
