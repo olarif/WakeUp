@@ -67,10 +67,19 @@ public class PlayerMovement : MonoBehaviour
 
         //animator
         animator.SetFloat("Speed", Mathf.Abs(moveX));
-        if (!isGrounded) animator.SetBool("IsJumping", true);
-        else if (!isGrounded && rb.velocity.y < 0) animator.SetBool("IsFalling", true);
-        else if (!isGrounded && rb.velocity.y > 0) animator.SetBool("IsFalling", false);
+        //if (!isGrounded) animator.SetBool("IsJumping", true);
+        if (!isGrounded && rb.velocity.y < 0)
+        {
+            animator.SetBool("IsFalling", true);
+            animator.SetBool("IsJumping", false);
+        }
+        else if (!isGrounded && rb.velocity.y > 0)
+        {
+            animator.SetBool("IsJumping", true);
+            animator.SetBool("IsFalling", false);
+        }
         else if (isGrounded) animator.SetBool("IsJumping", false);
+        else if (isGrounded) animator.SetBool("IsFalling", false);
 
         //grapple script
         if (Input.GetMouseButtonDown(0) && !isGrounded)
