@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FmodPlayer : MonoBehaviour
 {
-    private float distance = 0.1f;
+    private float distance = 1f;
     private float Material;
 
 
@@ -12,19 +12,20 @@ public class FmodPlayer : MonoBehaviour
     void FixedUpdate()
     {
         MaterialCheck();
+        Debug.DrawRay(transform.position, Vector3.down * distance, Color.blue);
         
     }
     void MaterialCheck()
     {
         RaycastHit2D hit;
-        hit = Physics2D.Raycast(transform.position, Vector2.down, distance, 1 << 6);
+        hit = Physics2D.Raycast(transform.position, Vector3.down, distance, 1 << 6);
         if (hit.collider)
          {
-            if (hit.collider.tag == "Floor")
+            if (hit.collider.CompareTag("Floor"))
             {
                 Material = 0f;
             }
-            else if (hit.collider.tag == "Gear")
+            else if (hit.collider.CompareTag("Gear"))
             {
                 Material = 1f;
             }

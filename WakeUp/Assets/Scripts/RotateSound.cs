@@ -18,6 +18,7 @@ public class RotateSound : MonoBehaviour
         {
             IsRotating();
             RotateLeft();
+            
         }
         else if (transform.eulerAngles.z < tempZ)
         {
@@ -30,15 +31,28 @@ public class RotateSound : MonoBehaviour
     void RotateRight()
     {
         Debug.Log("right");
+        
     }
 
     void RotateLeft()
     {
         Debug.Log("left");
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        DoubleGearSound();
+    }
     void IsRotating()
     {
         Debug.Log("rotating");
+        
+    }
+    void DoubleGearSound()
+    {
+        string path= "event:/GearTurnLeft";
+        FMOD.Studio.EventInstance DoubleGear = FMODUnity.RuntimeManager.CreateInstance(path);
+        // DoubleGear.setParameterByName("Material", Material);
+        DoubleGear.start();
+        DoubleGear.release();
     }
 }
