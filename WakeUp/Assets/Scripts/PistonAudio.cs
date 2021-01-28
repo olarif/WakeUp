@@ -12,7 +12,8 @@ public class PistonAudio : MonoBehaviour
     void Start()
     {
         pistonLoop = FMODUnity.RuntimeManager.CreateInstance("event:/LaunchingPiston");
-        
+        pistonLoop.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform, GetComponent<Rigidbody2D>()));
+
         oldpos = transform.position;
         
     }
@@ -20,7 +21,7 @@ public class PistonAudio : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        pistonLoop.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform, GetComponent<Rigidbody2D>()));
+        
         pistonLoop.getPlaybackState(out pbState);
         pos = transform.position;
         if(pos!=oldpos)
