@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: bfaf7e03ce9e8194d92fc75dfc1ef7c5
   - enabled: 0
-    path: Assets/Scenes/First Level.unity
-    guid: 53f81acbd9925984f954bca4b4209994
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/MoveTesting.unity
-    guid: 633c72502b9227a4cbe18610e7e5fd07
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/shrek.unity
     guid: f448c1d0b7ed73e49aade38fc90d6cab
+  - enabled: 1
+    path: Assets/Scenes/1-1 A Clockwork.unity
+    guid: b20974c3b8aa40740814900d77e2977f
   m_configObjects: {}
