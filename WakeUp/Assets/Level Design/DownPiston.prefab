@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 7020432965454433090}
   - component: {fileID: 2821424165397078224}
   - component: {fileID: 1340499703152399229}
-  - component: {fileID: 8756487512591068742}
-  - component: {fileID: 2272767316874574472}
   m_Layer: 6
   m_Name: DownPiston
   m_TagString: Ground
@@ -75,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -56038755
-  m_SortingLayer: 0
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ed1dd5d770bfa7844aaae4f92c497d43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,9 +97,9 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0043234825, y: -8.478904}
+  m_Offset: {x: 0.07814717, y: -8.480385}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -112,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.8705664, y: 6.9958935}
+  m_Size: {x: 5.4729548, y: 6.6904573}
   m_EdgeRadius: 0
 --- !u!114 &2821424165397078224
 MonoBehaviour:
@@ -127,10 +125,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pistonSpeed: 5
-  speed: 30
-  delay: 2.5
-  yMin: 0
-  yMax: 13
+  speed: 5
+  delay: 2
+  yMin: -2
+  yMax: 2
 --- !u!50 &1340499703152399229
 Rigidbody2D:
   serializedVersion: 4
@@ -152,41 +150,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!251 &8756487512591068742
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2485544956699017199}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 0
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 180
---- !u!70 &2272767316874574472
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2485544956699017199}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.16476381, y: 0.7871146}
-  m_Size: {x: 1.8109014, y: 13.447398}
-  m_Direction: 0
 --- !u!1 &7052565877986618291
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2498867932285666779}
-  - component: {fileID: 6276210636078795935}
+  - component: {fileID: 5400201062627235171}
   m_Layer: 0
   m_Name: DeadCollider
   m_TagString: dead
@@ -218,8 +181,8 @@ Transform:
   m_Father: {fileID: 1718410676642329993}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &6276210636078795935
-BoxCollider2D:
+--- !u!60 &5400201062627235171
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -231,7 +194,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.084487915, y: -3.0838027}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -241,6 +204,10 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.3119183, y: 0.17202091}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -2.4795785, y: 3.2947655}
+      - {x: -2.429563, y: -2.540189}
+      - {x: 2.1690135, y: -2.5185404}
+      - {x: 2.0662918, y: -0.8398187}
+      - {x: 2.5373707, y: 3.2198267}
