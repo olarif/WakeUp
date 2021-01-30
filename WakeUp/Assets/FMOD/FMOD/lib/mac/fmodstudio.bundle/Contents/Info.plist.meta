@@ -1,11 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:WakeUp/Assets/Prefabs/Player.prefab.meta
-guid: 4296e3f0c61b9e644997438f76792bc3
-PrefabImporter:
-=======
 guid: 2d90bca931071b04f842310ac5cff3f6
 DefaultImporter:
->>>>>>> ac96eb5b8872c0a6a1a518cb3ace187773eb29c7:WakeUp/Assets/Plugins/FMOD/lib/mac/fmodstudio.bundle/Contents/Info.plist.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
