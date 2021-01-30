@@ -21,7 +21,7 @@ public class GameManager1 : MonoBehaviour
 
     public void EndGame()
     {
-        Debug.Log("Game Over");
+        //Debug.Log("Game Over");
     }
 
  

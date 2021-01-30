@@ -76,9 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf16a952a74b934ca1988d1eb932d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 4705072153077926009}
   speed: 15
-  airSpeed: 20
+  airSpeed: 18
   spawnPoint: {fileID: 0}
   groundLayer:
     serializedVersion: 2
@@ -95,6 +94,7 @@ MonoBehaviour:
   maxDistance: 15
   hoistSpeed: 5
   groundCheck: {fileID: 6246605558180184232}
+  animator: {fileID: 4705072153077926009}
   dust: {fileID: 7947188774965550766}
   flying: 0
 --- !u!95 &4705072153077926009
@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2038e918bd36264ea0bbddb9e60620a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheck: {fileID: 6246605558180184232}
 --- !u!114 &2847331016692851990
 MonoBehaviour:
   m_ObjectHideFlags: 0
