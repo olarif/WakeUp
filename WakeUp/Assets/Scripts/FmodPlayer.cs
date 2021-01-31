@@ -5,7 +5,7 @@ using UnityEngine;
 public class FmodPlayer : MonoBehaviour
 {
     public Transform groundCheck;
-    private float distance = 0.1f;
+    private float distance = 0.2f;
     private float radius = 0.5f;
     private float Material;
     private bool wasGrounded = true;
@@ -23,7 +23,7 @@ public class FmodPlayer : MonoBehaviour
     void FixedUpdate()
     {
         MaterialCheck();
-        Debug.DrawRay(transform.position, Vector3.down * distance, Color.blue);
+        Debug.DrawRay(groundCheck.position, Vector3.down * distance, Color.blue);
         
         PlayerLanded();
         wasGrounded = isGrounded();
@@ -37,7 +37,7 @@ public class FmodPlayer : MonoBehaviour
     void MaterialCheck()
     {
         
-        hit = Physics2D.Raycast(transform.position, Vector3.down, distance, 1 << 6);
+        hit = Physics2D.Raycast(groundCheck.position, Vector3.down, distance, 1 << 6);
         if (hit.collider)
          {
             
@@ -69,16 +69,13 @@ public class FmodPlayer : MonoBehaviour
     }
     void PlayerJump(string path)
     {
-        if (!isGrounded() && wasGrounded)
-        {
+
             FMOD.Studio.EventInstance Jumping = FMODUnity.RuntimeManager.CreateInstance(path);
-            Jumping.setParameterByName("Velocity", Height_Difference);
+            //Jumping.setParameterByName("Velocity", Height_Difference);
             //Footsteps.setParameterByName("LowVolume", Height_Difference);
             Jumping.start();
             Jumping.release();
             Debug.Log(Height_Difference);
-
-        }
        
 
     }

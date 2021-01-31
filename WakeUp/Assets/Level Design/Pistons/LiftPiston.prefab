@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3136970220604807503}
   - component: {fileID: 2176680076928133858}
   - component: {fileID: 1037665332}
+  - component: {fileID: 1195740213483233891}
   m_Layer: 6
   m_Name: LiftPiston
   m_TagString: Ground
@@ -196,3 +197,15 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 180
+--- !u!114 &1195740213483233891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373506629795055216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e4024b6de5bce40aeb1c4c0188a659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

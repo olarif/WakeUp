@@ -108,9 +108,29 @@ MonoBehaviour:
   Path: FmodAssets/Desktop/Gears.bank
   Name: Gears
   StudioPath: bank:/Gears
-  lastModified: 637476521550309459
+  lastModified: 637477061244958984
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-5881195814720806172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-5834302976377402710
 MonoBehaviour:
@@ -193,7 +213,7 @@ MonoBehaviour:
   Path: FmodAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637476339427050630
+  lastModified: 637477061245198325
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -333,7 +353,7 @@ MonoBehaviour:
   - {fileID: -5479313778651025033}
   StringsBanks:
   - {fileID: 4149389581577579966}
-  stringsBankWriteTime: 637476339427051389
+  stringsBankWriteTime: 637477061245248196
   cacheVersion: 6
 --- !u!114 &1026480333031258808
 MonoBehaviour:
@@ -355,6 +375,26 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 1116
+  Exists: 1
+--- !u!114 &1220038245844471755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &1460278183893647441
 MonoBehaviour:
@@ -419,6 +459,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &3221384917825525500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &4149389581577579966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,7 +494,7 @@ MonoBehaviour:
   Path: FmodAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476339427051389
+  lastModified: 637477061245248196
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -486,6 +546,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1984
+--- !u!114 &7888736141209466035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &8034628566137069242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,7 +609,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -5508320705949100100}
+  - {fileID: -5881195814720806172}
   MinDistance: 0
   MaxDistance: 0
   Length: 687
