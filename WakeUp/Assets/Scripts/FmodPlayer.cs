@@ -24,7 +24,7 @@ public class FmodPlayer : MonoBehaviour
     {
         MaterialCheck();
         Debug.DrawRay(transform.position, Vector3.down * distance, Color.blue);
-        PlayerJump();
+        
         PlayerLanded();
         wasGrounded = isGrounded();
         isGrounded();
@@ -60,17 +60,18 @@ public class FmodPlayer : MonoBehaviour
         Footsteps.start();
         Footsteps.release();
     }
+
     bool isGrounded()
     {
       // return hit = Physics2D.Raycast(groundCheck.position, Vector3.down, distance, 1 << 6);
       return Physics2D.OverlapCircle(groundCheck.position, radius, 1 << 6);
 
     }
-    void PlayerJump()
+    void PlayerJump(string path)
     {
-        if (!isGrounded() && wasGrounded&&Input.GetButton("Jump"))
+        if (!isGrounded() && wasGrounded)
         {
-            FMOD.Studio.EventInstance Jumping = FMODUnity.RuntimeManager.CreateInstance("event:/Jumping");
+            FMOD.Studio.EventInstance Jumping = FMODUnity.RuntimeManager.CreateInstance(path);
             Jumping.setParameterByName("Velocity", Height_Difference);
             //Footsteps.setParameterByName("LowVolume", Height_Difference);
             Jumping.start();

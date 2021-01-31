@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4144185923256523101}
   m_Layer: 6
   m_Name: N2Spur_T10
-  m_TagString: Untagged
+  m_TagString: Gear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 6.876276
+  m_Distance: 6.8762755
   m_MaxDistanceOnly: 1
 --- !u!60 &708881490861327226
 PolygonCollider2D:
@@ -908,7 +908,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -12.127993, y: 10.794263}
+  m_ConnectedAnchor: {x: 1.085001, y: 29.26}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -1584,23 +1584,23 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 2.827303, y: 2.7589667}
-      - {x: 3.1376183, y: 3.7874374}
+      - {x: 3.2696965, y: 3.8063068}
       - {x: 2.109604, y: 3.9001467}
-      - {x: 1.7316368, y: 4.9789762}
+      - {x: 1.7693732, y: 5.0355787}
       - {x: 0.659806, y: 4.561337}
-      - {x: -0.32438716, y: 4.993393}
+      - {x: -0.28665054, y: 5.0688667}
       - {x: -0.72466433, y: 4.0695333}
-      - {x: -1.7332075, y: 4.1395664}
+      - {x: -1.8464172, y: 4.1395664}
       - {x: -1.8667729, y: 3.2596583}
-      - {x: -2.5104744, y: 2.2522898}
+      - {x: -2.604816, y: 2.2145529}
       - {x: -1.9154575, y: 1.5182985}
-      - {x: -1.9774609, y: 0.31872913}
+      - {x: -2.034066, y: 0.22438784}
       - {x: -0.72472584, y: -0.09108527}
-      - {x: -0.575067, y: -0.89804494}
+      - {x: -0.5939353, y: -0.9735187}
       - {x: 0.44842362, y: -0.41859475}
-      - {x: 1.3533732, y: -1.0007725}
+      - {x: 1.39111, y: -0.9819031}
       - {x: 1.9133412, y: -0.01921305}
-      - {x: 2.975744, y: 0.060008228}
+      - {x: 2.9380076, y: -0.053202458}
       - {x: 2.7047868, y: 0.8521976}
       - {x: 3.175888, y: 1.5399712}
       - {x: 3.7398043, y: 1.8582562}
