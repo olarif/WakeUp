@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     public float lowJumpMultiplier = 2f;
     private bool jumpJustPressed;
     private bool jumpHeld;
-    private bool airborn = false;
 
     //grappling hook
     public LineRenderer line;
@@ -153,7 +152,6 @@ public class PlayerMovement : MonoBehaviour
         if (!isGrabbed && !isGrounded)
         {
             MoveInAir();
-            airborn = true;
         }
 
         //Jump multipliers

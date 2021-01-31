@@ -108,7 +108,7 @@ MonoBehaviour:
   Path: FmodAssets/Desktop/Gears.bank
   Name: Gears
   StudioPath: bank:/Gears
-  lastModified: 637476486525982494
+  lastModified: 637476521550309459
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -158,6 +158,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 312
+--- !u!114 &-5508320705949100100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-5479313778651025033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +193,7 @@ MonoBehaviour:
   Path: FmodAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637476486526221869
+  lastModified: 637476339427050630
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -313,7 +333,7 @@ MonoBehaviour:
   - {fileID: -5479313778651025033}
   StringsBanks:
   - {fileID: 4149389581577579966}
-  stringsBankWriteTime: 637476486526281694
+  stringsBankWriteTime: 637476339427051389
   cacheVersion: 6
 --- !u!114 &1026480333031258808
 MonoBehaviour:
@@ -414,7 +434,7 @@ MonoBehaviour:
   Path: FmodAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476486526281694
+  lastModified: 637476339427051389
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -509,7 +529,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 8989450458436636925}
+  - {fileID: -5508320705949100100}
   MinDistance: 0
   MaxDistance: 0
   Length: 687
@@ -532,4 +552,4 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
