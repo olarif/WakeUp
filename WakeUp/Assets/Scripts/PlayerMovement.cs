@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public Animator animator;
 
     //movement
     public float speed = 10f;
@@ -19,8 +20,6 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 15f;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
-    private bool jumpJustPressed;
-    private bool jumpHeld;
 
     //grappling hook
     public LineRenderer line;
@@ -41,15 +40,6 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private float radius = 0.5f;
 
-    //Animation states
-    public Animator animator;
-    private string currentState;
-    const string IdleAnim = "Idle";
-    const string RunAnim = "Run";
-    const string JumpStartAnim = "JumpStart";
-    const string JumpFallAnim = "JumpFall";
-    const string JumpLandAnim = "JumpLand";
-
     //particle system
     public ParticleSystem dust;
 
@@ -58,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         joint = GetComponent<DistanceJoint2D>();
         joint.enabled = false;
@@ -70,13 +59,27 @@ public class PlayerMovement : MonoBehaviour
     {
         //call jump function
         if (Input.GetButtonDown("Jump") && isGrounded) Jump();
-        jumpJustPressed = Input.GetButtonDown("Jump");
-        jumpHeld = Input.GetButton("Jump");
 
         if (isGrabbed && Input.GetMouseButtonUp(0))
         {
             RopeLaunch();
         }
+
+        //animator
+        animator.SetFloat("Speed", Mathf.Abs(moveX));
+        //if (!isGrounded) animator.SetBool("IsJumping", true);
+        if (!isGrounded && rb.velocity.y < 0)
+        {
+            animator.SetBool("IsFalling", true);
+            animator.SetBool("IsJumping", false);
+        }
+        else if (!isGrounded && rb.velocity.y > 0)
+        {
+            animator.SetBool("IsJumping", true);
+            animator.SetBool("IsFalling", false);
+        }
+        else if (isGrounded) animator.SetBool("IsJumping", false);
+        else if (isGrounded) animator.SetBool("IsFalling", false);
 
         //grapple script
         if (Input.GetMouseButtonDown(0) && !isGrounded)
@@ -118,9 +121,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 velY = new Vector2(0, rb.velocity.y);
-        Vector2 velX = new Vector2(0, rb.velocity.x);
-
         if (setRope)
         {
             SetRope();
@@ -167,40 +167,6 @@ public class PlayerMovement : MonoBehaviour
         //flip character
         if      (!faceRight && moveX < 0) Flip();
         else if  (faceRight && moveX > 0) Flip();
-
-        //Animation states
-        if (isGrounded && moveX > 0)
-        {
-            ChangeAnimationState(RunAnim);
-        }
-        else if (isGrounded && moveX < 0)
-        {
-            ChangeAnimationState(RunAnim);
-        }
-        else if (isGrounded && moveX == 0)
-        {
-            ChangeAnimationState(IdleAnim);
-        }
-        else if (!isGrounded && rb.velocity.y > 0)
-        {
-            ChangeAnimationState(JumpStartAnim);
-        }
-        else if (!isGrounded && rb.velocity.y < 0)
-        {
-            ChangeAnimationState(JumpFallAnim);
-        }
-    }
-
-    void ChangeAnimationState(string newState)
-    {
-        //stop the same animation form interrupting itself
-        if (currentState == newState) return;
-
-        //play the animation
-        animator.Play(newState);
-
-        //reassign the current state
-        currentState = newState;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -277,6 +243,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    //draw rope
     void SetRope()
     {
         line.useWorldSpace = true;
@@ -294,6 +261,7 @@ public class PlayerMovement : MonoBehaviour
         setRope = false;
     }
 
+    //delete rope
     void DestroyRope()
     {
         isGrabbed = false;
