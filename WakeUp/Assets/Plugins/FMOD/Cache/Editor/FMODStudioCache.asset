@@ -110,7 +110,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -6555790069905441055}
+  - {fileID: -2787378594907970464}
   MinDistance: 0
   MaxDistance: 0
   Length: 1500
@@ -172,7 +172,7 @@ MonoBehaviour:
   Path: FmodAssets/Desktop/Gears.bank
   Name: Gears
   StudioPath: bank:/Gears
-  lastModified: 637477234090634229
+  lastModified: 637478804533537964
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -297,7 +297,7 @@ MonoBehaviour:
   Path: FmodAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637477234090853652
+  lastModified: 637478804533557973
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -366,6 +366,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 64910
+--- !u!114 &-2787378594907970464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Landing/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-1836895592237347281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,7 +458,7 @@ MonoBehaviour:
   - {fileID: -5479313778651025033}
   StringsBanks:
   - {fileID: 4149389581577579966}
-  stringsBankWriteTime: 637477234090903525
+  stringsBankWriteTime: 637478804533557973
   cacheVersion: 6
 --- !u!114 &1026480333031258808
 MonoBehaviour:
@@ -544,6 +564,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &2284431650292809821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &3221384917825525500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,7 +619,7 @@ MonoBehaviour:
   Path: FmodAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637477234090903525
+  lastModified: 637478804533557973
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -774,7 +814,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 4545218321686707366}
+  - {fileID: 2284431650292809821}
   MinDistance: 0
   MaxDistance: 0
   Length: 93
