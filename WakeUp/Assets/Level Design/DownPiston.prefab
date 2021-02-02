@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7020432965454433090}
   - component: {fileID: 2821424165397078224}
   - component: {fileID: 1340499703152399229}
+  - component: {fileID: 5057640759390715497}
   m_Layer: 6
   m_Name: DownPiston
   m_TagString: Ground
@@ -137,7 +138,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2485544956699017199}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -150,6 +151,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &5057640759390715497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2485544956699017199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e4024b6de5bce40aeb1c4c0188a659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7052565877986618291
 GameObject:
   m_ObjectHideFlags: 0

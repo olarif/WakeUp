@@ -76,7 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf16a952a74b934ca1988d1eb932d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 4705072153077926009}
   speed: 15
   airSpeed: 20
   spawnPoint: {fileID: 0}
@@ -95,6 +94,7 @@ MonoBehaviour:
   maxDistance: 15
   hoistSpeed: 5
   groundCheck: {fileID: 6246605558180184232}
+  animator: {fileID: 4705072153077926009}
   dust: {fileID: 7947188774965550766}
   flying: 0
 --- !u!95 &4705072153077926009
@@ -219,8 +219,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005229315, y: -0.13367932}
-  m_Size: {x: 1.6964278, y: 6.4447775}
+  m_Offset: {x: 0.005229315, y: -0.083758935}
+  m_Size: {x: 1.6964288, y: 6.3449388}
   m_Direction: 0
 --- !u!114 &610980014362702570
 MonoBehaviour:
@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2038e918bd36264ea0bbddb9e60620a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheck: {fileID: 0}
 --- !u!114 &2847331016692851990
 MonoBehaviour:
   m_ObjectHideFlags: 0
