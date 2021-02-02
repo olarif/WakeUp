@@ -109,11 +109,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (flying) Fly();
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
     }
 
     private void FixedUpdate()
