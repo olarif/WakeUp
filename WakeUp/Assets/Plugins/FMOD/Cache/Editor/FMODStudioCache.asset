@@ -110,10 +110,30 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -2787378594907970464}
+  - {fileID: -4960836831410344846}
   MinDistance: 0
   MaxDistance: 0
   Length: 1500
+--- !u!114 &-7526236638826117739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/landing/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-6564391936680795057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +192,7 @@ MonoBehaviour:
   Path: FmodAssets/Desktop/Gears.bank
   Name: Gears
   StudioPath: bank:/Gears
-  lastModified: 637478804533537964
+  lastModified: 637479024647661712
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -297,7 +317,7 @@ MonoBehaviour:
   Path: FmodAssets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637478804533557973
+  lastModified: 637479024647901067
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -320,6 +340,89 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-4960836831410344846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Landing/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-3997127387433780948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-3905562462872118625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-3816231529156609317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/DoubleGear
+  m_EditorClassIdentifier: 
+  Path: event:/DoubleGear
+  guid: f2e84604bad27e42a78c58b3101da697
+  Banks:
+  - {fileID: -6315704566021794878}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10000
+  Length: 2000
 --- !u!114 &-3772956392758969002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,7 +488,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1836895592237347281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,6 +512,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 312
+--- !u!114 &-974972643599887890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/launchingPiston
+  m_EditorClassIdentifier: 
+  Path: event:/launchingPiston
+  guid: 1f00f4521daa0148b397bdda6a741942
+  Banks:
+  - {fileID: -5479313778651025033}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 8.35
+  MaxDistance: 25
+  Length: 6058
 --- !u!114 &-574759871339976772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,20 +572,64 @@ MonoBehaviour:
   - {fileID: -5479313778651025033}
   EditorEvents:
   - {fileID: 6373589114408707761}
-  - {fileID: -7798348057613259105}
   - {fileID: -3679712857122277655}
-  - {fileID: -6564391936680795057}
   - {fileID: -1836895592237347281}
   - {fileID: 8457497831283387270}
-  - {fileID: 8034628566137069242}
   - {fileID: -8917799513280951174}
+  - {fileID: 341320043028382541}
+  - {fileID: 3020471189813914442}
+  - {fileID: -3816231529156609317}
+  - {fileID: -974972643599887890}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5479313778651025033}
   StringsBanks:
   - {fileID: 4149389581577579966}
-  stringsBankWriteTime: 637478804533557973
+  stringsBankWriteTime: 637479024647960903
   cacheVersion: 6
+--- !u!114 &341320043028382541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/lvl1_Music
+  m_EditorClassIdentifier: 
+  Path: event:/lvl1_Music
+  guid: 0ae5d7121d728f4f982416f6199979c7
+  Banks:
+  - {fileID: -6315704566021794878}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 222888
+--- !u!114 &724706268185292608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &1026480333031258808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,7 +753,31 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
+--- !u!114 &3020471189813914442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/landing
+  m_EditorClassIdentifier: 
+  Path: event:/landing
+  guid: 95a9f787707e334c99311d5ed24d89e7
+  Banks:
+  - {fileID: -6315704566021794878}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5477790658113669405}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1500
 --- !u!114 &3221384917825525500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,6 +798,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &3869225812834036467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/landing/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &4149389581577579966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,11 +833,11 @@ MonoBehaviour:
   Path: FmodAssets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637478804533557973
+  lastModified: 637479024647960903
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 1166
+    Value: 1206
   Exists: 1
 --- !u!114 &4436941313129337749
 MonoBehaviour:
@@ -656,6 +870,46 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &4707584753773000051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Material
+  m_EditorClassIdentifier: 
+  Name: Material
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &5477790658113669405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/landing/Material
   m_EditorClassIdentifier: 
   Name: Material
   Min: 0
@@ -814,7 +1068,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 2284431650292809821}
+  - {fileID: -3905562462872118625}
   MinDistance: 0
   MaxDistance: 0
   Length: 93

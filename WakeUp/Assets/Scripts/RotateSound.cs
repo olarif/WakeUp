@@ -50,8 +50,10 @@ public class RotateSound : MonoBehaviour
     }
     void DoubleGearSound()
     {
-        string path= "event:/GearTurnLeft";
+        string path= "event:/DoubleGear";
         FMOD.Studio.EventInstance DoubleGear = FMODUnity.RuntimeManager.CreateInstance(path);
+        DoubleGear.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform));
+
         // DoubleGear.setParameterByName("Material", Material);
         DoubleGear.start();
         DoubleGear.release();
