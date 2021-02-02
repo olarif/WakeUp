@@ -820,11 +820,7 @@ Transform:
   m_GameObject: {fileID: 708881491365176549}
   m_LocalRotation: {x: -0, y: -0, z: 0.12719563, w: 0.9918776}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_LocalPosition: {x: -11.71, y: -0.18, z: 30.272448}
-=======
-  m_LocalPosition: {x: -11.75, y: -0.2, z: 0}
->>>>>>> parent of bf4aa3d... updated lvls
 =======
   m_LocalPosition: {x: -11.75, y: -0.2, z: 0}
 >>>>>>> parent of bf4aa3d... updated lvls
@@ -921,15 +917,11 @@ HingeJoint2D:
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_ConnectedAnchor: {x: -12.127993, y: 10.794263}
 =======
   m_ConnectedAnchor: {x: -12.099993, y: 10.808263}
 >>>>>>> Stashed changes
-=======
-  m_ConnectedAnchor: {x: 0.6750002, y: -3.5400002}
->>>>>>> parent of bf4aa3d... updated lvls
 =======
   m_ConnectedAnchor: {x: 0.6750002, y: -3.5400002}
 >>>>>>> parent of bf4aa3d... updated lvls

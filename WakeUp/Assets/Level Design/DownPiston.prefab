@@ -14,15 +14,11 @@ GameObject:
   - component: {fileID: 2821424165397078224}
   - component: {fileID: 1340499703152399229}
 <<<<<<< HEAD
-<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
   - component: {fileID: 5057640759390715497}
   - component: {fileID: 5846629363614551649}
 >>>>>>> Stashed changes
-=======
-  - component: {fileID: 5057640759390715497}
->>>>>>> parent of bf4aa3d... updated lvls
 =======
   - component: {fileID: 5057640759390715497}
 >>>>>>> parent of bf4aa3d... updated lvls
@@ -164,11 +160,8 @@ Rigidbody2D:
   m_CollisionDetection: 1
   m_Constraints: 4
 <<<<<<< HEAD
-<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
-=======
->>>>>>> parent of bf4aa3d... updated lvls
 =======
 >>>>>>> parent of bf4aa3d... updated lvls
 --- !u!114 &5057640759390715497
@@ -183,7 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e4024b6de5bce40aeb1c4c0188a659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!251 &5846629363614551649
 PlatformEffector2D:
@@ -205,8 +197,6 @@ PlatformEffector2D:
   m_UseSideBounce: 0
   m_SideArc: 180
 >>>>>>> Stashed changes
-=======
->>>>>>> parent of bf4aa3d... updated lvls
 =======
 >>>>>>> parent of bf4aa3d... updated lvls
 --- !u!1 &7052565877986618291
