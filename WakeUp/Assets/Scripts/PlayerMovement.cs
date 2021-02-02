@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     //ground check
     public Transform groundCheck;
     private bool isGrounded;
-    private float radius = 0.5f;
+    private float radius = 0.01f;
 
     //Animation states
     public Animator animator;
