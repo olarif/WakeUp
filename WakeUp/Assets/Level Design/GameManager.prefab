@@ -66,9 +66,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: c859fe69e337bc547907359fb2a8edc1, type: 3}
     m_FontSize: 14
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Timer
+  m_Text: '00:00
 
 '
 --- !u!1 &409945136457454609
@@ -995,7 +995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6139475612979565100}
-  - component: {fileID: 6139475612979565099}
+  - component: {fileID: 1800078277853327933}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -1017,7 +1017,7 @@ Transform:
   m_Father: {fileID: 6139475613830342076}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6139475612979565099
+--- !u!114 &1800078277853327933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1026,12 +1026,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6139475612979565098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7320fe02c39920a42a880ef809603c53, type: 3}
+  m_Script: {fileID: 11500000, guid: c8c5672a12efa8541a82413db391e0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textDisplay: {fileID: 102212504717622687}
-  secondsLeft: 30
-  countdown: 0
+  timeStart: 0
+  textBox: {fileID: 8416201646122244020}
 --- !u!1 &6139475613538328006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,7 +1158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 46.019, y: -38.135}
+  m_AnchoredPosition: {x: 46.019043, y: -38.13501}
   m_SizeDelta: {x: 92.0371, y: 92.0371}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7078151905006706433
