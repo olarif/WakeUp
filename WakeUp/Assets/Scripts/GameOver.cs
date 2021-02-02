@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
-<<<<<<< Updated upstream
 
     public void Setup(int score)
     {
     }
 
-=======
->>>>>>> Stashed changes
     // Start is called before the first frame update
     void Start()
     {

@@ -7,19 +7,15 @@ public class TimerCountdown : MonoBehaviour
 {
     public GameObject textDisplay;
     public int secondsLeft = 30;
-    public int timeStart;
     public bool countdown = false;
 
     void Start()
     {
-        //textDisplay.GetComponent<Text>().text = "00:" + secondsLeft;
-        textDisplay.GetComponent<Text>().text = timeStart.ToString("F2");
+        textDisplay.GetComponent<Text>().text = "00:" + secondsLeft;
     }
 
     void Update()
     {
-
-
         if (!countdown && secondsLeft > 0)
         {
             StartCoroutine(Timer());
