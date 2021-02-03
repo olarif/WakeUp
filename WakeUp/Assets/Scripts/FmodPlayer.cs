@@ -75,7 +75,7 @@ public class FmodPlayer : MonoBehaviour
             //Footsteps.setParameterByName("LowVolume", Height_Difference);
             Jumping.start();
             Jumping.release();
-            Debug.Log(Height_Difference);
+            //Debug.Log(Height_Difference);
        
 
     }
@@ -87,7 +87,7 @@ public class FmodPlayer : MonoBehaviour
             //Landing.setParameterByName("Velocity", Height_Difference);
             Landing.start();
             Landing.release();
-            Debug.Log(Height_Difference);
+            //Debug.Log(Height_Difference);
 
         }
     }
