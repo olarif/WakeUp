@@ -69,9 +69,11 @@ public class FmodPlayer : MonoBehaviour
     }
     void PlayerJump(string path)
     {
-
+        
             FMOD.Studio.EventInstance Jumping = FMODUnity.RuntimeManager.CreateInstance(path);
-            //Jumping.setParameterByName("Velocity", Height_Difference);
+
+
+            Jumping.setParameterByName("Velocity",Height_Difference );
             //Footsteps.setParameterByName("LowVolume", Height_Difference);
             Jumping.start();
             Jumping.release();
@@ -85,6 +87,7 @@ public class FmodPlayer : MonoBehaviour
         {
            FMOD.Studio.EventInstance Landing = FMODUnity.RuntimeManager.CreateInstance("event:/Landing");
             //Landing.setParameterByName("Velocity", Height_Difference);
+            Landing.setParameterByName("Material", Material);
             Landing.start();
             Landing.release();
             Debug.Log(Height_Difference);
@@ -94,11 +97,11 @@ public class FmodPlayer : MonoBehaviour
     void PlayerFallingCheck()
     {
         oldHeight = Height;
-        Height = transform.position.y;
+        Height = transform.position.x;
         Height_Difference = Height - oldHeight;
-        if(Height_Difference>0)
+        if(Height_Difference!=0)
         {
-            Height_Difference *= -1;
+            Height_Difference = 1;
         }
     }
 }
