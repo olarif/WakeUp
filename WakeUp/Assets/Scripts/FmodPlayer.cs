@@ -11,7 +11,7 @@ public class FmodPlayer : MonoBehaviour
     private bool wasGrounded = true;
     RaycastHit2D hit;
 
-    private float Height, oldHeight, Height_Difference,oldPos,Pos,Pos_Difference;
+    private float Height, oldHeight, Height_Difference;
     //FMOD.Studio.EventInstance Footsteps;
 
     private void Start()
@@ -73,7 +73,7 @@ public class FmodPlayer : MonoBehaviour
             FMOD.Studio.EventInstance Jumping = FMODUnity.RuntimeManager.CreateInstance(path);
 
 
-            Jumping.setParameterByName("Velocity",Pos_Difference );
+            Jumping.setParameterByName("Velocity",Height_Difference );
             //Footsteps.setParameterByName("LowVolume", Height_Difference);
             Jumping.start();
             Jumping.release();
@@ -97,15 +97,11 @@ public class FmodPlayer : MonoBehaviour
     void PlayerFallingCheck()
     {
         oldHeight = Height;
-        oldPos = Pos;
-        Pos = transform.position.x;
-        Height = transform.position.y;
+        Height = transform.position.x;
         Height_Difference = Height - oldHeight;
-        Pos_Difference = Pos - oldPos;
-        if(Pos_Difference!=0||Height_Difference<-0.3f)
+        if(Height_Difference!=0)
         {
-            Pos_Difference = 1;
+            Height_Difference = 1;
         }
-        
     }
 }
